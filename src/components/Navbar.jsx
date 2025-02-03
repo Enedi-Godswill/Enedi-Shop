@@ -25,9 +25,6 @@ const Navbar = () => {
         <li>
             <Link to="/shop">shop</Link>
         </li>
-        <li>
-            <Link to="/cart">cart</Link>
-        </li>
       </ul>
       <button className="text-2xl sm:hidden " onClick={toggleBtn} >
         {menuBtn ? <MdClose /> : <BiMenu /> }

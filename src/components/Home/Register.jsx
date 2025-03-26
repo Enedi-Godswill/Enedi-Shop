@@ -1,9 +1,9 @@
 
 const Register = () => {
   return (
-    <div className="flex justify-center text-center mt-4 flex-col gap-2">
+    <div className="flex sm:flex-row justify-center text-center mt-4 flex-col gap-2">
         <h1 className="text-xl font-bold p-2">Register and Enjoy</h1>
-        <div className="flex sm:grid sm:grid-cols-2 justify-around gap-3 items-center p-3">
+        <div className="flex flex-col sm:flex-row sm:grid sm:grid-cols-2 justify-around gap-3 items-center p-3">
             <div className="pl-4 ">
                 <h1>If you register</h1>
                 <p>You stand to get better discounts from our black market supplies and even learn more about the various brands in the business</p>

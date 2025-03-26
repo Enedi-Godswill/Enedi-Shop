@@ -1,19 +1,17 @@
 
-import { useContext } from "react"
+
 import { AiFillStar } from "react-icons/ai"
 import { Link } from "react-router-dom"
-import { MyContext } from "../Context.jsx"
+import { All_Products } from "../Data/All_Products"
 
 const HomeProducts = () => {
-
-  const userData = useContext(MyContext);
 
   return (
     <div className="flex justify-center items-center flex-col gap-3 mt-5">
       <h1 className="text-xl font-semibold uppercase">Our Products</h1>
       <div className="flex flex-wrap sm:grid sm:grid-cols-2 md:grid-cols-3 gap-2 justify-center items-center flex-col">
         {
-            userData.map((item) => {
+            All_Products.map((item) => {
                 if(item.category === "home") {
                   return(
                     <div key={item.id} className="flex justify-center items-center flex-col " >

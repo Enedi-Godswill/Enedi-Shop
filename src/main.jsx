@@ -8,8 +8,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Shop from "./components/Shop.jsx"
 import About from "./components/About.jsx"
 import Product from "./components/Product/Product.jsx"
-import { MyContext } from './components/Context.jsx'
-import { All_Products } from './components/Data/All_Products.js'
+
+// Context Page
+import { ShopContextProvider } from './components/context/Context.jsx'
 
 const router = createBrowserRouter([
   {path:"/", element:<App /> , errorElement:<div>404 Not Found</div> },
@@ -22,8 +23,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <MyContext.Provider value={All_Products} >
+    <ShopContextProvider>
       <RouterProvider router={router} />
-    </MyContext.Provider>
-  </StrictMode>,
+    </ShopContextProvider>
+  </StrictMode>
 )

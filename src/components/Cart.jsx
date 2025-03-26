@@ -1,30 +1,27 @@
 
-import { useState } from "react";
-import { All_Products } from "./Data/All_Products";
+import { All_Products } from "./Data/All_Products"
+import { useContext } from "react"
+import { ShopContext } from "./context/Context"
+import Product from "./Product/Product";
 
 const Cart = () => {
 
-    const getDefaultCart = () => {
-        let cart = {};
-        for(let i = 0; i < All_Products.length; i++ ){
-            cart[i] = 0;
-        }
-        return cart;
-    }
-
-    const [cartItems, setCartItems] = useState(getDefaultCart)
-
-    const addToCart = (itemId) => {
-        setCartItems((prev) => ({...prev,[ItemId]:prev[ItemId] + 1}));
-    }
-
-    const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({...prev,[ItemId]:prev[ItemId] - 1}));
-    }
+    const {cartItems} = useContext(ShopContext);
 
     return (
         <div>
-        
+            <div>
+                <h1>Your Cart Items</h1>
+            </div>
+            <div>
+                {All_Products.map(item => {
+                    if(cartItems[Product.id] !== 0){
+                        return(
+                            <cartItems data={Product} />
+                        )
+                    }
+                })}
+            </div>
         </div>
     )
 }
